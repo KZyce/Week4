@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Responsive Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>New Product Webpage</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Layout 1</a></li>
+                <li><a href="layout2.html">Layout 2</a></li>
+                <li><a href="layout3.html">Layout 3</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <script>
+    function getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function setRandomGradient() {
+        let color1 = getRandomColor();
+        let color2 = getRandomColor();
+        document.querySelector("header").style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+    }
+
+    window.onload = setRandomGradient; // Change gradient on page load
+</script>
+
+
+    <section class="hero">
+    <img src="./images/img-green-1.png" alt="Hero Image">
+    <div class="hero-content">
+        <h1>Welcome to New Product Website</h1>
+        <p>Discover amazing content with a modern, stylish design.</p>
+    </div>
+</section>
+
+    <section class="content">
+         <div class="box">
+            <img src="./images/people.jpg" alt="A beautiful landscape">
+        </div>
+        <div class="box">
+            <img src="./images/img-green-2.png" alt="A beautiful landscape">
+        </div>
+        <div class="box">
+            <img src="./images/img-green-3.png" alt="Another beautiful landscape">
+        </div>
+        <div class="box">
+            <img src="./images/img-black-1.png" alt="Yet another landscape">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

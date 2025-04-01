@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Responsive Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            flex: 1 1 200px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        
+        @media (max-width: 768px) {
+            header {
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            .gallery-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .gallery-item {
+                flex: 1 1 100%;
+                margin-bottom: 20px;
+            }
+
+            .gallery-item img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 24px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .gallery-item img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>New Product Webpage</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Layout 1</a></li>
+                <li><a href="layout2.html">Layout 2</a></li>
+                <li><a href="layout3.html">Layout 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        function getRandomColor() {
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function setRandomGradient() {
+            let color1 = getRandomColor();
+            let color2 = getRandomColor();
+            document.querySelector("header").style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+        }
+
+        window.onload = setRandomGradient; 
+    </script>
+
+    <section class="hero">
+        <img src="./images/img-green-1.png" alt="Hero Image">
+        <div class="hero-content">
+            <h1>Welcome to New Product Website</h1>
+            <p>Discover amazing content with a modern, stylish design.</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-container">
+            <p style="flex: 1; padding-top: 150px; padding-right: 20px; text-align: left;">
+                Explore the innovative features and benefits of our latest product. Designed for modern users with cutting-edge technology. Introducing the next generation of mobile technology – a sleek, powerful, and intuitive design to elevate your digital experience. Featuring cutting-edge performance, a stunning display, and seamless connectivity, our new device is built for future.
+            </p>
+            <div class="gallery-item">
+                <img src="./images/people.jpg" alt="Image 1">
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>New Features</h2>
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="./images/img-black-1.png" alt="Image 4"></div>
+            <div class="gallery-item"><img src="./images/img-green-2.png" alt="Image 5"></div>
+            <div class="gallery-item"><img src="./images/img-green-3.png" alt="Image 6"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
